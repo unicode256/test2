@@ -107,7 +107,9 @@ app.get('/', (req, res, next) => {
 });
 
 
-
+app.use(function(req, res, next) {
+    res.status(404).send('404 ERROR');
+  });
 
 server.listen(port, () => {
     console.log('Server listening at port %d', port);
